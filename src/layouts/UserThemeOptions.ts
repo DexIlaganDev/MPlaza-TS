@@ -5,25 +5,25 @@ import { ThemeOptions } from '@mui/system'
 // import corePalette from 'src/@core/theme/palette'
 
 // ** To use mode (light/dark/semi-dark), skin(default/bordered), direction(ltr/rtl), etc. for conditional styles, uncomment below line
-// import { useSettings } from 'src/@core/hooks/useSettings'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const UserThemeOptions = (): ThemeOptions => {
   // ** To use mode (light/dark/semi-dark), skin(default/bordered), direction(ltr/rtl), etc. for conditional styles, uncomment below line
-  // const { settings } = useSettings()
+  const { settings } = useSettings()
 
   // ** To use mode (light/dark/semi-dark), skin(default/bordered), direction(ltr/rtl), etc. for conditional styles, uncomment below line
-  // const { mode, skin, themeColor } = settings
+  const { mode, skin, themeColor } = settings
 
   // ** To use core palette, uncomment the below line
   // const palette = corePalette(mode, skin, themeColor)
 
   return {
-    /*
+    
     palette:{
       primary: {
-        light: '#9E69FD',
-        main: '#9155FD',
-        dark: '#804BDF',
+        light: '#72D949',
+        main: '#3BC117',
+        dark: '#25A510',
         contrastText: '#FFF'
       }
     },
@@ -175,7 +175,7 @@ const UserThemeOptions = (): ThemeOptions => {
     zIndex: {
       appBar: 1200,
       drawer: 1100
-    } */
+    } 
   }
 }
 

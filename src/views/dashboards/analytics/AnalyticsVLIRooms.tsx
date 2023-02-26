@@ -28,15 +28,15 @@ interface DataType {
 
 const salesData: DataType[] = [
   {
-    stats: '245k',
-    title: 'Sales',
+    stats: '2 Unrented',
+    title: 'Commercials',
     color: 'primary',
     icon: <Icon icon='mdi:trending-up' />
   },
   {
-    stats: '12.5k',
-    title: 'Customers',
-    color: 'success',
+    stats: '2 Unrented',
+    title: 'Stockholders',
+    color: 'error',
     icon: <Icon icon='mdi:account-outline' />
   },
   {
@@ -73,11 +73,11 @@ const renderStats = () => {
   ))
 }
 
-const AnalyticsTransactionsCard = () => {
+const AnalyticsVLIRooms = () => {
   return (
     <Card>
       <CardHeader
-        title='Transactions'
+        title='VLI Rooms Summary'
         action={
           <OptionsMenu
             options={['Last 28 Days', 'Last Month', 'Last Year']}
@@ -102,4 +102,4 @@ const AnalyticsTransactionsCard = () => {
   )
 }
 
-export default AnalyticsTransactionsCard
+export default AnalyticsVLIRooms

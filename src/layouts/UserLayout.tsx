@@ -10,7 +10,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import Layout from 'src/@core/layouts/Layout'
 
 // ** Navigation Imports
-import VerticalNavItems from 'src/navigation/vertical'
+import VerticalNavItems from 'src/navigation/verticalMedical'
 import HorizontalNavItems from 'src/navigation/horizontal'
 
 // ** Component Import
@@ -23,10 +23,21 @@ import HorizontalAppBarContent from './components/horizontal/AppBarContent'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
+import { Typography } from '@mui/material'
 
 interface Props {
   children: ReactNode
   contentHeightFixed: boolean
+}
+
+const AppBrand = () => {
+  return (
+    <>
+      <Typography variant='h6' sx={{ ml: 2 }}>
+        MEDICAL PLAZA
+      </Typography>
+    </>
+  )
 }
 
 const UserLayout = ({ children, contentHeightFixed }: Props) => {
@@ -59,7 +70,8 @@ const UserLayout = ({ children, contentHeightFixed }: Props) => {
       contentHeightFixed={contentHeightFixed}
       verticalLayoutProps={{
         navMenu: {
-          navItems: VerticalNavItems()
+          navItems: VerticalNavItems(),
+          branding : () => <AppBrand />
 
           // Uncomment the below line when using server-side menu in vertical layout and comment the above line
           // navItems: verticalMenuItems
