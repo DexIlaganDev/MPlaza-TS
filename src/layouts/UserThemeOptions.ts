@@ -12,7 +12,7 @@ const UserThemeOptions = (): ThemeOptions => {
   const { settings } = useSettings()
 
   // ** To use mode (light/dark/semi-dark), skin(default/bordered), direction(ltr/rtl), etc. for conditional styles, uncomment below line
-  const { mode, skin, themeColor } = settings
+  const { mode } = settings
 
   // ** To use core palette, uncomment the below line
   // const palette = corePalette(mode, skin, themeColor)
