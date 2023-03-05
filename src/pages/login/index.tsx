@@ -54,7 +54,8 @@ const RightWrapper = styled(Box)<BoxProps>(({ theme }) => ({
 
 const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   [theme.breakpoints.down('xl')]: {
-    width: '100%'
+    width: '100%',
+    maxWidth : '600px'
   },
   [theme.breakpoints.down('md')]: {
     maxWidth: 400
@@ -303,7 +304,6 @@ const LoginPage = () => {
                   label='Remember Me'
                   control={<Checkbox checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} />}
                 />
-                <LinkStyled href='/forgot-password'>Forgot Password?</LinkStyled>
               </Box>
               <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
                 Login
