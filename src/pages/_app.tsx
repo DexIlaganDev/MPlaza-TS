@@ -101,6 +101,9 @@ const Guard = ({ children, authGuard, guestGuard }: GuardProps) => {
   }
 }
 
+// ** Import Supabase
+import supabase from 'src/configs/supabase'
+
 // ** Configure JSS & ClassName
 const App = (props: ExtendedAppProps) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
