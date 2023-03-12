@@ -94,10 +94,10 @@ const UserDropdown = (props: Props) => {
         }}
       >
         <Avatar
-          alt='John Doe'
+          alt='MT'
           onClick={handleDropdownOpen}
           sx={{ width: 40, height: 40 }}
-          src='/images/avatars/1.png'
+          src='/images/avatars/8.png'
         />
       </Badge>
       <Menu
@@ -118,17 +118,17 @@ const UserDropdown = (props: Props) => {
                 horizontal: 'right'
               }}
             >
-              <Avatar alt='John Doe' src='/images/avatars/1.png' sx={{ width: '2.5rem', height: '2.5rem' }} />
+              <Avatar alt='' src='/images/avatars/8.png' sx={{ width: '2.5rem', height: '2.5rem' }} />
             </Badge>
             <Box sx={{ display: 'flex', ml: 3, alignItems: 'flex-start', flexDirection: 'column' }}>
-              <Typography sx={{ fontWeight: 600 }}>John Doe</Typography>
+              <Typography sx={{ fontWeight: 600 }}>VLI</Typography>
               <Typography variant='body2' sx={{ fontSize: '0.8rem', color: 'text.disabled' }}>
-                Admin
+                Administrator
               </Typography>
             </Box>
           </Box>
         </Box>
-        <Divider sx={{ mt: '0 !important' }} />
+        {/* <Divider sx={{ mt: '0 !important' }} />
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
           <Box sx={styles}>
             <Icon icon='mdi:account-outline' />
@@ -165,7 +165,7 @@ const UserDropdown = (props: Props) => {
             <Icon icon='mdi:help-circle-outline' />
             FAQ
           </Box>
-        </MenuItem>
+        </MenuItem> */}
         <Divider />
         <MenuItem
           onClick={handleLogout}

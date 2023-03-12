@@ -1,13 +1,16 @@
 // ** React Imports
-import { ReactNode } from 'react'
+import React,{ ReactNode } from 'react'
 
 // ** MUI Imports
 import { Theme } from '@mui/material/styles'
+import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Layout Imports
 // !Do not remove this Layout import
 import Layout from 'src/@core/layouts/Layout'
+
+import Icon from 'src/@core/components/icon'
 
 // ** Navigation Imports
 import VerticalNavItems from 'src/navigation/verticalMedical'
@@ -31,13 +34,34 @@ interface Props {
 }
 
 const AppBrand = () => {
-  return (
-    <>
-      <Typography variant='h6' sx={{ ml: 2 }}>
-        MEDICAL PLAZA
-      </Typography>
-    </>
-  )
+  const { settings, saveSettings } = useSettings()
+
+  const toggleNav = () => {
+    saveSettings( {...settings, navCollapsed : !settings.navCollapsed} )
+  }
+
+  if( settings.navCollapsed ) {
+    return (
+      <Box 
+      sx={{paddingLeft:'15px', cursor:'pointer'}}>
+      <Icon 
+        fontSize={35}
+        onClick={toggleNav}
+        icon='mdi:arrow-right-bold-circle-outline' />
+      </Box>
+    )
+  }
+  else {
+    return (
+      <>
+        <Typography variant='h6' sx={{ ml: 2 }}>
+          VLI
+        </Typography>
+      </>
+    )
+  }
+
+  
 }
 
 const UserLayout = ({ children, contentHeightFixed }: Props) => {
@@ -70,6 +94,7 @@ const UserLayout = ({ children, contentHeightFixed }: Props) => {
       contentHeightFixed={contentHeightFixed}
       verticalLayoutProps={{
         navMenu: {
+          lockedIcon: <Icon icon='mdi:arrow-left-bold-circle-outline' />,
           navItems: VerticalNavItems(),
           branding : () => <AppBrand />
 
@@ -85,7 +110,10 @@ const UserLayout = ({ children, contentHeightFixed }: Props) => {
               toggleNavVisibility={props.toggleNavVisibility}
             />
           )
-        }
+        },
+      }}
+      footerProps={{
+        content: () => ''
       }}
       {...(settings.layout === 'horizontal' && {
         horizontalLayoutProps: {

@@ -30,8 +30,8 @@ const salesData: DataType[] = [
   {
     stats: '2 Unrented',
     title: 'Commercials',
-    color: 'primary',
-    icon: <Icon icon='mdi:trending-up' />
+    color: 'error',
+    icon: <Icon icon='mdi:home-lock' />
   },
   {
     stats: '2 Unrented',
@@ -40,22 +40,16 @@ const salesData: DataType[] = [
     icon: <Icon icon='mdi:account-outline' />
   },
   {
-    stats: '1.54k',
-    color: 'warning',
-    title: 'Products',
-    icon: <Icon icon='mdi:cellphone-link' />
-  },
-  {
-    stats: '$88k',
+    stats: 'PHP 88k',
     color: 'info',
-    title: 'Revenue',
-    icon: <Icon icon='mdi:currency-usd' />
+    title: 'Receivables',
+    icon: <Icon icon='mdi:cash-multiple' />
   }
 ]
 
 const renderStats = () => {
   return salesData.map((item: DataType, index: number) => (
-    <Grid item xs={12} sm={3} key={index}>
+    <Grid item xs={12} sm={4} key={index}>
       <Box key={index} sx={{ display: 'flex', alignItems: 'center' }}>
         <CustomAvatar
           variant='rounded'
