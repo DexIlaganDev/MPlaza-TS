@@ -15,10 +15,16 @@ import TableContainer from '@mui/material/TableContainer'
 // ** Props
 type Props = {}
 
+type RoomProps = {
+  id : number,
+  room_number : string,
+  office_name : string,
+  is_commercial : boolean
+}
 
 const Rooms = (props: Props) => {
   const [ fetchError, setFetchError ] = React.useState<null | string>(null)
-  const [ rooms, setRooms ] = React.useState<null | any >(null)
+  const [ rooms, setRooms ] = React.useState<null | RoomProps[] >(null)
 
   React.useEffect( ()=>{
 
@@ -34,7 +40,7 @@ const Rooms = (props: Props) => {
           }
           if(Rooms) {
             setFetchError(null)
-            setRooms(Rooms)
+            setRooms(Rooms as RoomProps[])
           }
     }
 
